@@ -16,7 +16,7 @@ An EDI like Arduino or Processing.
 
 
 ## INSTRUCTIONS
-For installing Arduino and/or Processing, you can follow these instructions at: https://github.com/honnet/itp#arduino
+To install Arduino and/or Processing, you can follow these instructions at: https://github.com/honnet/itp#arduino
 
 Here they are if you somehow can't access the link:
 
