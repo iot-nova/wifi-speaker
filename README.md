@@ -12,7 +12,7 @@ Speakers | 1 | ?.??€ | Regardless of the speaker to the extent that it can pro
 
 
 ## SOFTWARE REQUIREMENTS
-An EDI like Arduino or Processing.
+An IDE like Arduino or Processing.
 
 
 ## INSTRUCTIONS
