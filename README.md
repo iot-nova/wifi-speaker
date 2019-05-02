@@ -1,4 +1,11 @@
 # Wifi-Speaker
+
+## GROUP MEMBERS
+N : Nicolas CORNU
+O : Olivier LEFEBVRE
+V : Vincent VALVAS
+A : Alexandre FELIX
+
 ## DESCRIPTION
 Configure a web server on your microcontroller to listen to music through your speakers via the wifi network
 
