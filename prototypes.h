@@ -45,5 +45,6 @@ String webServerDisplayForm();
 String webServerHandleURLForm();
 
 void playSong(String);
+void loopSong();
 
 #endif

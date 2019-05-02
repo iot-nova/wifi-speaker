@@ -3,18 +3,33 @@
 AudioGeneratorMP3 *mp3;
 AudioFileSourceHTTPStream *file;
 AudioFileSourceBuffer *buff;
-AudioOutputI2SNoDAC *out;
+AudioOutputI2S *out;
 
 void playSong(String fileUrl)
-{
-  // Create the HTTP stream normally
-  file = new AudioFileSourceHTTPStream("fdvdf");
+{  
+  file = new AudioFileSourceHTTPStream(fileUrl.c_str());
   
-  // Create a buffer using that stream
-  buff = new AudioFileSourceBuffer(file, 2048);
-  out = new AudioOutputI2SNoDAC();
+  buff = new AudioFileSourceBuffer(file, 8 * 4096);
+  out = new AudioOutputI2S();
   mp3 = new AudioGeneratorMP3();
+
+  out->SetGain(1.0);
   
-  // Pass in the *buffer*, not the *http stream* to enable buffering
   mp3->begin(buff, out);
+}
+
+void loopSong()
+{  
+  if(mp3)
+  {
+    if(mp3->isRunning())
+    {
+      if(!mp3->loop()) mp3->stop();
+    }
+    
+    else
+    {
+      Serial.printf("MP3 done\n");
+    }
+  }
 }

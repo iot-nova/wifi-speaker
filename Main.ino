@@ -3,9 +3,13 @@
 char ssid[] = "Hexus";
 char pass[] = "Password123";
 
+//http://www.noiseaddicts.com/samples_1w72b820/1449.mp3
+
 int status = WL_IDLE_STATUS;
 
 ESP8266WebServer server (8080);
+
+//##################################################
 
 void setup()
 {
@@ -41,22 +45,34 @@ void setup()
   printWifiStatus();
 }
 
+//##################################################
+
 void loop()
 {
   server.handleClient();
+
+  loopSong();
 }
+
+//##################################################
 
 void handlerDisplayForm()
 {
   server.send(200, "text/html", webServerDisplayForm());
 }
 
+//##################################################
+
 void handlerHandleURLForm()
 {
   server.send(200, "text/html", webServerHandleURLForm());
 
+  Serial.println("A");
+
   playSong(server.arg("url"));
 }
+
+//##################################################
 
 void printWifiStatus()
 {
