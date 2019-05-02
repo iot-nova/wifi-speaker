@@ -1,4 +1,14 @@
 # Wifi-Speaker
+
+## GROUP MEMBERS
+N : Nicolas CORNU
+
+O : Olivier LEFEBVRE
+
+V : Vincent VALVAS
+
+A : Alexandre FELIX
+
 ## DESCRIPTION
 Configure a web server on your microcontroller to listen to music through your speakers via the wifi network
 
@@ -12,7 +22,7 @@ Speakers | 1 | ?.??€ | Regardless of the speaker to the extent that it can pro
 
 
 ## SOFTWARE REQUIREMENTS
-An EDI like Arduino or Processing.
+An IDE like Arduino or Processing.
 
 
 ## INSTRUCTIONS
@@ -39,6 +49,7 @@ Here they are if you somehow can't access the link:
 > It will allow you to install these libraries, here is the procedure:
 > 
 > arduino.cc/en/Guide/Libraries#toc3
+
 > PROCESSING
 > 
 >     If you don't have it, download Processing: processing.org/download
