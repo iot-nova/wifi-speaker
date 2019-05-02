@@ -2,8 +2,11 @@
 
 ## GROUP MEMBERS
 N : Nicolas CORNU
+
 O : Olivier LEFEBVRE
+
 V : Vincent VALVAS
+
 A : Alexandre FELIX
 
 ## DESCRIPTION
