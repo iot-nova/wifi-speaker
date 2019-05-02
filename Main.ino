@@ -54,6 +54,8 @@ void handlerDisplayForm()
 void handlerHandleURLForm()
 {
   server.send(200, "text/html", webServerHandleURLForm());
+
+  playSong(server.arg("url"));
 }
 
 void printWifiStatus()
