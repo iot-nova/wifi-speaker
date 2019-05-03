@@ -67,8 +67,6 @@ void handlerHandleURLForm()
 {
   server.send(200, "text/html", webServerHandleURLForm());
 
-  Serial.println("A");
-
   playSong(server.arg("url"));
 }
 
