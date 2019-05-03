@@ -53,3 +53,8 @@ Finally, set the following board options in your Arduino:
 - Upload Speed: "115200"
 - CPU Frequency: 160 Mhz
 - IwIP Variant: "v2 Higher Bandwidth" or "v1.4 Open Source"
+
+## ARDUINO LIBRARIES USED
+- ESP8266Wifi
+- ESP8266Audio - Not in the library manager but can be found here: https://github.com/earlephilhower/ESP8266Audio
+- ESP8266WebServer
