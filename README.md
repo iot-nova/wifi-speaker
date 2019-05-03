@@ -23,8 +23,10 @@ I2S DAC | 1 | From ~15.00€ | Any basic I2S DAC with a jack output is enough.
 Audio output jack-compatible (speakers, headphones, etc.) | 1 | ?.??€ | N/A
 
 You can use a DAC which would act as an audio interface between your microcontroller and your audio output (speaker, headphones, etc).
-In our case, we used a **Wemos D1 Mini** as our microcontroller with an **Analog I2S DAC**.
-Here are the pins mapping between our microcontroller and our I2S DAC: 
+In our case, we used a **Wemos D1 Mini** as our microcontroller with an **Analog I2S DAC PCM5102A**.
+
+
+Here are the pins mapping between our microcontroller and our DAC: 
 
 Wemos D1 Mini (Pro) | I2S DAC
 ------------------- | -------
@@ -35,6 +37,8 @@ D8 | BCLK
 D4 | LRCLK/WCK
 
 \*: In our case, only the connection between the 5V and the VCC worked. The 3.3V did not work, but it might work in your case depending on your hardware configuration.
+
+Our DAC has a jumper which allows us to switch between the "I2S" mode and the "LJ Left Justify" mode. We used the "I2S" mode in order to register an audio output with good quality, but the "Left Justify" mode has heavy noises output alongside the music.
 
 
 ## SOFTWARE REQUIREMENTS
@@ -54,7 +58,9 @@ Finally, set the following board options in your Arduino:
 - CPU Frequency: 160 Mhz
 - IwIP Variant: "v2 Higher Bandwidth" or "v1.4 Open Source"
 
-## ARDUINO LIBRARIES USED
+### ARDUINO LIBRARIES USED
 - ESP8266Wifi
-- ESP8266Audio - Not in the library manager but can be found here: https://github.com/earlephilhower/ESP8266Audio
+- ESP8266Audio - Currently (03/05/2019) not in the library manager but can be found here: https://github.com/earlephilhower/ESP8266Audio
 - ESP8266WebServer
+
+
