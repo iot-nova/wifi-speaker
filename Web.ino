@@ -1,6 +1,6 @@
 #include "prototypes.h"
 
-String webServerDisplayForm()
+void webServerDisplayForm()
 {
   String result = "<!DOCTYPE HTML>\r\n<html>\r";
 
@@ -24,10 +24,10 @@ String webServerDisplayForm()
   result += "\r</body>";
   result += "\r</html>";
   
-  return result;
+  server.send(200, "text/html", result);
 }
 
-String webServerHandleURLForm()
+void webServerHandleURLForm()
 {
   String result = "<!DOCTYPE HTML>\r\n<html>\r";
 
@@ -40,7 +40,7 @@ String webServerHandleURLForm()
   result += "\r<div style=\"display:flex; flex-direction:row; justify-content:center;\">";
   result += "\r<div style=\"padding:20px; width:calc(100% - 40px); margin:20px; max-width:400px; background-color:#FFFFFF; border-radius:2px;\">";
   result += "\r<div style=\"font-size:0.9em; margin-bottom:5px;\">Playing song from:</div>";
-  result += "\r<div style=\"border:1px solid rgba(0,0,0,0.25); border-radius:4px; padding:5px; line-height:16px; font-size:0.9em; width:100%; box-sizing:border-box; color:rgba(0,0,0,0.75);\">" + server.arg("url") + "</div>";
+  //result += "\r<div style=\"border:1px solid rgba(0,0,0,0.25); border-radius:4px; padding:5px; line-height:16px; font-size:0.9em; width:100%; box-sizing:border-box; color:rgba(0,0,0,0.75);\">" + server.arg("url") + "</div>";
   result += "\r<div style=\"display:flex; flex-direction:row; justify-content:flex-end;\">";
   result += "\r<a href=\"/\" style=\"text-decoration:none; margin-top:20px; border:1px solid #428BCA; border-radius:4px; padding:5px 15px 5px 15px; font-size:0.9em; color:#428BCA; background-color:#FFFFFF; cursor:pointer;\">Pick another URL</a>";
   result += "\r</div>";
@@ -50,5 +50,7 @@ String webServerHandleURLForm()
   result += "\r</body>";
   result += "\r</html>";
 
-  return result;
+  server.send(200, "text/html", result);
+
+  playSong(server.arg("url"));
 }
