@@ -109,4 +109,4 @@ There are two problems that we have not resolve yet:
 
 1 - The delay when first playing the music.
 
-2 - Some hiccups while playing the music which is due to the lack of buffering, but setting the buffering causes the music to be unreadable.
+2 - Some hiccups while playing the music which is due to the lack of buffering, but setting the buffering causes the music to be unreadable. This might be a limitation due to the low processor frequency of our microcontroller.
