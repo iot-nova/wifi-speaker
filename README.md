@@ -26,8 +26,7 @@ RCA output device | 1 | ?.??€ | You can use a jack output device but with an R
 You can use a DAC which would act as an audio interface between your microcontroller and your audio output device.
 In our case, we used a **Wemos D1 Mini** as our microcontroller with an **Analog I2S DAC PCM5102A** which has an RCA port and therefore a RCA to Jack adapter.
 
-
-Here are the pins mapping between our microcontroller and our DAC: 
+Here are the pins mapping between our microcontroller and our DAC - **they are required** : 
 
 Wemos D1 Mini (Pro) | I2S DAC
 ------------------- | -------
