@@ -19,7 +19,7 @@ Product | Quantity | Price | Informations
 ------- | -------- | ----- | ------------
 Micro USB cable | 1 | ~3.00€ | N/A
 **ESP8266 compatible Microcontroller** | 1 | 2.00€ | N/A
-I2S DAC | 1 | From ~15€ | Any basic I2S DAC with a jack output is enough.
+I2S DAC | 1 | From ~15.00€ | Any basic I2S DAC with a jack output is enough.
 Audio output jack-compatible (speakers, headphones, etc.) | 1 | ?.??€ | N/A
 
 You can use a DAC which would act as an audio interface between your microcontroller and your audio output (speaker, headphones, etc).
@@ -42,7 +42,8 @@ Install the Arduino IDE: https://www.arduino.cc/en/Main/Software
 
 Install this driver if you don't use Linux: https://wiki.wemos.cc/downloads
 
-If you never used ESP8266 with your Arduino IDE you need to follow this procedure: github.com/esp8266/Arduino#installing-with-boards-manager
+If you never used ESP8266 with your Arduino IDE you need to follow this procedure: 
+https://www.github.com/esp8266/Arduino#installing-with-boards-manager
 
 If you never used the MPU-6050 or OSC in Arduino, use the following keywords in the Library Manager:
 - MPU6050
