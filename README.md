@@ -38,6 +38,8 @@ D4 | LRCLK/WCK
 
 \*: In our case, only the connection between the 5V and the VCC worked. The 3.3V did not work, but it might work in your case depending on your hardware configuration.
 
+![Visual representation](https://e2e.ti.com/cfs-file/__key/communityserver-discussions-components-files/64/0184.232.jpg)
+
 Our DAC has a jumper which allows us to switch between the "I2S" mode and the "Left Justify" mode. We used the "I2S" mode in order to register an audio output with good quality, but the "Left Justify" mode has heavy noises output alongside the music.
 Theses modes are PCM data formats.
 
