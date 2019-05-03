@@ -56,7 +56,7 @@ An advantage of left-justified results (on processors that support it) is that y
 
 ![Wemos cabling](https://i.imgur.com/SwUAzwJ.jpg)
 
-![Overall cabling](https://i.imgur.com/DQHn3WS.jpg)
+![Overall cabling](https://i.imgur.com/mm9OEbS.jpg)
 </details>
 
 ## SOFTWARE REQUIREMENTS
