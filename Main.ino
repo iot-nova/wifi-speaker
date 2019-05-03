@@ -3,29 +3,22 @@
 char ssid[] = "Hexus";
 char pass[] = "Password123";
 
-//http://www.noiseaddicts.com/samples_1w72b820/1449.mp3
+AudioGeneratorMP3 *mp3;
+AudioFileSourceHTTPStream *file;
+AudioFileSourceBuffer *buff;
+AudioOutputI2S *out;
 
 int status = WL_IDLE_STATUS;
 
 ESP8266WebServer server (8080);
+
+//const char* URL = "http://www.noiseaddicts.com/samples_1w72b820/4353.mp3";
 
 //##################################################
 
 void setup()
 {
   Serial.begin(115200);
-  
-  while(!Serial)
-  {
-    ;
-  }
-
-  if(WiFi.status() == WL_NO_SHIELD)
-  {
-    Serial.println("WiFi shield not present");
-
-    while(true);
-  }
 
   while(WiFi.status() != WL_CONNECTED)
   {
@@ -37,37 +30,42 @@ void setup()
     delay(10000);
   }
 
-  server.on("/", handlerDisplayForm);
-  server.on("/play", handlerHandleURLForm);
+  server.on("/", webServerDisplayForm);
+  server.on("/play", webServerHandleURLForm);
   
   server.begin();
 
   printWifiStatus();
+
+  /*
+  file = new AudioFileSourceHTTPStream(URL);
+  buff = new AudioFileSourceBuffer(file, 2048);
+  out = new AudioOutputI2S();
+  mp3 = new AudioGeneratorMP3();
+
+  mp3->begin(buff, out);
+  */
 }
 
 //##################################################
 
 void loop()
-{
+{  
   server.handleClient();
 
-  loopSong();
-}
-
-//##################################################
-
-void handlerDisplayForm()
-{
-  server.send(200, "text/html", webServerDisplayForm());
-}
-
-//##################################################
-
-void handlerHandleURLForm()
-{
-  server.send(200, "text/html", webServerHandleURLForm());
-
-  playSong(server.arg("url"));
+  if(mp3)
+  {
+    if(mp3->isRunning())
+    {
+      if(!mp3->loop()) mp3->stop();
+    }
+    
+    else
+    {
+      Serial.println("MP3 done !");
+      mp3 = NULL;
+    }
+  }
 }
 
 //##################################################
