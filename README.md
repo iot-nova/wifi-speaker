@@ -38,7 +38,12 @@ D4 | LRCLK/WCK
 
 \*: In our case, only the connection between the 5V and the VCC worked. The 3.3V did not work, but it might work in your case depending on your hardware configuration.
 
-Our DAC has a jumper which allows us to switch between the "I2S" mode and the "LJ Left Justify" mode. We used the "I2S" mode in order to register an audio output with good quality, but the "Left Justify" mode has heavy noises output alongside the music.
+Our DAC has a jumper which allows us to switch between the "I2S" mode and the "Left Justify" mode. We used the "I2S" mode in order to register an audio output with good quality, but the "Left Justify" mode has heavy noises output alongside the music.
+Theses modes are PCM data formats.
+
+For instance, a left-justified result means that bits [15:(16-N)] of the register hold the result, and bits [(15-N):0] are set to zero. If your actual conversion result is 0x123, it would be read as 0x1230 if it was left-justified.
+
+An advantage of left-justified results (on processors that support it) is that you can take just the most-significant byte of the register, giving you 8-bits of precision instead of the native precision. This can be useful if you don't need the extra precision, or have RAM constraints and want to store a large number of samples.
 
 
 ## SOFTWARE REQUIREMENTS
