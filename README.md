@@ -50,6 +50,15 @@ For instance, a left-justified result means that bits [15:(16-N)] of the registe
 
 An advantage of left-justified results (on processors that support it) is that you can take just the most-significant byte of the register, giving you 8-bits of precision instead of the native precision. This can be useful if you don't need the extra precision, or have RAM constraints and want to store a large number of samples.
 
+<details>
+  <summary>Photos of the cabling</summary>
+  
+![DAC Cabling](https://i.imgur.com/rhUbkb1.jpg)
+
+![Wemos cabling](https://i.imgur.com/SwUAzwJ.jpg)
+
+![Overall cabling](https://i.imgur.com/DQHn3WS.jpg)
+</details>
 
 ## SOFTWARE REQUIREMENTS
 Install the Arduino IDE: https://www.arduino.cc/en/Main/Software
