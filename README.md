@@ -81,7 +81,7 @@ Depending on your system on which you connect the microcontroller, you might nee
 
 On windows, you would have to open the Device manager, then click on "Ports (COM and LPT)", then on the corresponding port that you chose in Arduino right before (e.g.: "COM5").
 After that, access to the properties of that port by right clicking on it.
-Finally, click on "Port parameters", then change the "Bits per second" value to the corresponding set value before which is "115200".
+Finally, click on "Port parameters", then change the "Bits per second" value to the corresponding set upload speed value before which is "115200".
 
 ![Example in french with a screenshot](https://i.imgur.com/xymjNYK.png)
 
@@ -105,7 +105,7 @@ Finally, click on "Port parameters", then change the "Bits per second" value to 
 
 ## WARNING
 
-There are two problems that we have not resolve yet:
+There are two problems that we have not solve yet:
 
 1 - The delay when first playing the music.
 
